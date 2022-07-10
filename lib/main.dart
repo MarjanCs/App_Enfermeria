@@ -10,7 +10,14 @@ import 'firebase_options.dart';
 
 void main() async {
   runApp(MyWidget());
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+      options: FirebaseOptions(
+          apiKey: "AIzaSyDnqou_LZYNUrH3PEmdELofoRGlYAqCqg4",
+          authDomain: "appenfermeria-d612d.firebaseapp.com",
+          projectId: "appenfermeria-d612d",
+          storageBucket: "appenfermeria-d612d.appspot.com",
+          messagingSenderId: "660550132391",
+          appId: "1:660550132391:web:b538599e89f1bf79def182"));
 }
 
 class MyWidget extends StatelessWidget {
