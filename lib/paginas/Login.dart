@@ -124,20 +124,12 @@ class _LoginState extends State<Login> {
                     child: Container(
                       padding: const EdgeInsets.all(20),
                       child: ElevatedButton(
-                        //style: ButtonStyle(
-                        //shape: MaterialStateProperty.all(
-                        // RoundedRectangleBorder(
-                        //borderRadius: BorderRadius.circular(15)))),
-
-                        //child: Padding(
-                        // padding: const EdgeInsets.all(12.0),
                         child: Text("Ingresar"),
                         style: ElevatedButton.styleFrom(
                             primary: Colors.amber,
                             onPrimary: Colors.white,
                             elevation: 5,
                             shadowColor: Colors.black),
-                        // ),
                         onPressed: () {
                           Navigator.push(
                               context,
