@@ -30,24 +30,26 @@ class _LoginState extends State<Login> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-                    child: Image(
-                      image: AssetImage('assets/logeo.png'),
-                    ),
+                    padding: EdgeInsets.fromLTRB(70, 70, 70, 80),
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage('assets/logeo.png'))),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Container(
-                        child: Image(
-                          image: AssetImage('assets/logo.png'),
-                        ),
+                        padding: EdgeInsets.fromLTRB(70, 40, 70, 80),
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage('assets/logo.png'))),
                       ),
                       Container(
                         child: Text(
                           "Nursing Help",
                           style: GoogleFonts.inter(
-                              fontSize: 20,
+                              fontSize: 30,
                               fontWeight: FontWeight.bold,
                               color: HexColor("#20D0CE")),
                         ),
@@ -126,7 +128,7 @@ class _LoginState extends State<Login> {
                       child: ElevatedButton(
                         child: Text("Ingresar"),
                         style: ElevatedButton.styleFrom(
-                            primary: Colors.amber,
+                            primary: Color.fromARGB(255, 0, 183, 196),
                             onPrimary: Colors.white,
                             elevation: 5,
                             shadowColor: Colors.black),
@@ -144,29 +146,21 @@ class _LoginState extends State<Login> {
                     child: Container(
                       padding: const EdgeInsets.all(20),
                       child: ElevatedButton(
-                        style: ButtonStyle(
-                            shape: MaterialStateProperty.all(
-                                RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(15)))),
-                        child: Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: Text(
-                            "Registrarse",
-                            style: GoogleFonts.inter(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                color: HexColor("#FFFFFF")),
-                          ),
-                        ),
+                        child: Text("Registrarse"),
+                        style: ElevatedButton.styleFrom(
+                            primary: Color.fromARGB(255, 0, 183, 196),
+                            onPrimary: Colors.white,
+                            elevation: 5,
+                            shadowColor: Colors.black),
                         onPressed: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => Registro()));
+                                  builder: (context) => Necesidades()));
                         },
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),

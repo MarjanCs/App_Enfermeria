@@ -43,12 +43,10 @@ class _InicioState extends State<Inicio> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Container(
-                padding: EdgeInsets.fromLTRB(1, 20, 1, 10),
-                child: Image(
-                  image: AssetImage(
-                    'assets/logo.png',
-                  ),
-                ),
+                padding: EdgeInsets.fromLTRB(70, 70, 70, 80),
+                decoration: BoxDecoration(
+                    image:
+                        DecorationImage(image: AssetImage('assets/logo.png'))),
               ),
               Container(
                 padding: EdgeInsets.fromLTRB(1, 20, 1, 10),
@@ -79,7 +77,7 @@ class _InicioState extends State<Inicio> {
             child: Text("Necesidades Basicas",
                 textAlign: TextAlign.center,
                 style: GoogleFonts.inter(
-                    fontSize: 18,
+                    fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: HexColor("#125873"))),
           ),
@@ -88,12 +86,12 @@ class _InicioState extends State<Inicio> {
             child: Text("Virginia Henderso",
                 textAlign: TextAlign.center,
                 style: GoogleFonts.inter(
-                    fontSize: 15,
+                    fontSize: 18,
                     fontWeight: FontWeight.bold,
                     color: HexColor("#125873"))),
           ),
           Container(
-            padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
+            padding: EdgeInsets.fromLTRB(20, 40, 20, 20),
             decoration: BoxDecoration(
                 image:
                     DecorationImage(image: AssetImage('assets/virginia.png'))),
@@ -103,7 +101,7 @@ class _InicioState extends State<Inicio> {
             child: Text("14 Necesidades Basicas",
                 textAlign: TextAlign.center,
                 style: GoogleFonts.inter(
-                    fontSize: 15,
+                    fontSize: 18,
                     fontWeight: FontWeight.bold,
                     color: HexColor("#125873"))),
           ),
@@ -117,7 +115,7 @@ class _InicioState extends State<Inicio> {
             child: Text("Patrones Funcionales",
                 textAlign: TextAlign.center,
                 style: GoogleFonts.inter(
-                    fontSize: 18,
+                    fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: HexColor("#125873"))),
           ),
@@ -126,23 +124,21 @@ class _InicioState extends State<Inicio> {
             child: Text("Libro de Enfermeria",
                 textAlign: TextAlign.center,
                 style: GoogleFonts.inter(
-                    fontSize: 15,
+                    fontSize: 18,
                     fontWeight: FontWeight.bold,
                     color: HexColor("#125873"))),
           ),
           Container(
-            padding: EdgeInsets.fromLTRB(0.0, 0.0, 20.0, 0.0),
-            child: Image.asset(
-              'assets/patron.PNG',
-              width: 100,
-            ),
+            padding: EdgeInsets.fromLTRB(20, 40, 20, 20),
+            decoration: BoxDecoration(
+                image: DecorationImage(image: AssetImage('assets/patron.png'))),
           ),
           Container(
             padding: EdgeInsets.all(20),
             child: Text("11 Patrones Funcionales",
                 textAlign: TextAlign.center,
                 style: GoogleFonts.inter(
-                    fontSize: 15,
+                    fontSize: 18,
                     fontWeight: FontWeight.bold,
                     color: HexColor("#125873"))),
           ),
@@ -153,26 +149,26 @@ class _InicioState extends State<Inicio> {
           ),
           Container(
             padding: EdgeInsets.all(20),
-            child: Text("Manuales de Ayuda",
+            child: Text("Manual de Ayuda",
+                textAlign: TextAlign.center,
+                style: GoogleFonts.inter(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: HexColor("#72CFF3"))),
+          ),
+          Container(
+            padding: EdgeInsets.fromLTRB(20, 40, 20, 20),
+            decoration: BoxDecoration(
+                image: DecorationImage(image: AssetImage('assets/manual.png'))),
+          ),
+          Container(
+            padding: EdgeInsets.all(20),
+            child: Text("Manuales - Guias - Libros",
                 textAlign: TextAlign.center,
                 style: GoogleFonts.inter(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                     color: HexColor("#72CFF3"))),
-          ),
-          Container(
-            child: Image(
-              image: AssetImage('assets/manual.png'),
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.all(20),
-            child: Text("Imagenes - Guias - Videos",
-                textAlign: TextAlign.center,
-                style: GoogleFonts.inter(
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                    color: HexColor("#72CFF3  "))),
           ),
         ],
       ),
