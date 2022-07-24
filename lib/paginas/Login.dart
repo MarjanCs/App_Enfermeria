@@ -1,3 +1,4 @@
+import 'package:enfermeria_app/paginas/Patrones.dart';
 import 'package:enfermeria_app/paginas/Registro.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';

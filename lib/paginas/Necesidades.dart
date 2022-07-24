@@ -1,6 +1,6 @@
-import 'dart:html';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:enfermeria_app/paginas/NecesidadesInfo.dart';
 import 'package:enfermeria_app/paginas/Registro.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -18,9 +18,12 @@ class _NecesidadesState extends State<Necesidades> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Hola"),
+      ),
       body: StreamBuilder(
         stream:
-            FirebaseFirestore.instance.collection('Necesidades').snapshots(),
+            FirebaseFirestore.instance.collection('Necesidades_14').snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (!snapshot.hasData) {
             return Center(
@@ -32,21 +35,26 @@ class _NecesidadesState extends State<Necesidades> {
               return Container(
                   width: MediaQuery.of(context).size.width,
                   margin: EdgeInsets.all(16),
-                  child: Card(
-                    child: Container(
-                      padding: EdgeInsets.all(16),
-                      child: Column(
-                        children: [
-                          Text(
-                            document['Title'].toString(),
-                            overflow: TextOverflow.ellipsis,
-                            maxLines: 500,
-                            style: GoogleFonts.dmSans(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18,
-                                color: Color(0xff0D0D0D)),
-                          ),
-                        ],
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => NecesidadesInfo(title: document['Title'].toString(),),));
+                    },
+                    child: Card(
+                      child: Container(
+                        padding: EdgeInsets.all(16),
+                        child: Column(
+                          children: [
+                            Text(
+                              document['Title'].toString(),
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 500,
+                              style: GoogleFonts.dmSans(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18,
+                                  color: Color(0xff0D0D0D)),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ));

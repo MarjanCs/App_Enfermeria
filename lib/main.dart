@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'paginas/Login.dart';
 import 'paginas/inicio.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
 
 void main() async {
   runApp(MyWidget());
