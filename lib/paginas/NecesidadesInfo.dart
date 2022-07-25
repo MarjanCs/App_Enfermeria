@@ -81,26 +81,90 @@ class _NecesidadesInfoState extends State<NecesidadesInfo> {
             children: snapshot.data!.docs.map((document) {
               return Column(
                 children: [
-                  Text(document['Titulo'].toString()),
-                  Text(document['Subtitulo'].toString()),
-                  //Container(
-                  //padding: EdgeInsets.all(5.0),
-                  //child: ListView.builder(
-                  //  scrollDirection: Axis.vertical,
-                  // shrinkWrap: true,
-                  //itemCount: document['Que valora'].length,
-                  // itemBuilder: (context, index) {
-                  ///  return ListTile(
-                  //  subtitle: Text(
-                  //   document['Que valora'][index].toString(),
-                  //   style: TextStyle(
-                  //       fontWeight: FontWeight.w100, fontSize: 15),
-                  //  textAlign: TextAlign.center,
-                  //  ),
-                  //  );
-                  //  },
-                  // ),
-                  // ),
+                  Text(
+                    document['Titulo'].toString(),
+                    style: GoogleFonts.inder(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: HexColor("#9E2B2A"),
+                    ),
+                  ),
+                  Text(
+                    document['Titulo2'].toString(),
+                    style: GoogleFonts.inder(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: HexColor("#9E2B2A")),
+                  ),
+                  Text(
+                    document['Descripcion'].toString(),
+                    style: GoogleFonts.inder(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: HexColor("#20D0CE")),
+                  ),
+                  Text(document['Titulo3'].toString(),
+                      style: GoogleFonts.inder(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: HexColor("#9E2B2A"))),
+                  Text(
+                    document['Descripcion2'].toString(),
+                    style: GoogleFonts.inder(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: HexColor("#20D0CE")),
+                  ),
+                  Text(document['Titulo4'].toString(),
+                      style: GoogleFonts.inder(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: HexColor("#9E2B2A"))),
+                  Container(
+                    padding: EdgeInsets.all(2.0),
+                    child: ListView.builder(
+                      scrollDirection: Axis.vertical,
+                      shrinkWrap: true,
+                      itemCount: document['Matriz'].length,
+                      itemBuilder: (context, index) {
+                        return ListTile(
+                          subtitle: Text(
+                            document['Matriz'][index].toString(),
+                            style: GoogleFonts.inder(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: HexColor("#20D0CE")),
+                            textAlign: TextAlign.left,
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                  Text(document['Titulo5'].toString(),
+                      style: GoogleFonts.inder(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: HexColor("#9E2B2A"))),
+                  Container(
+                    padding: EdgeInsets.all(2.0),
+                    child: ListView.builder(
+                      scrollDirection: Axis.vertical,
+                      shrinkWrap: true,
+                      itemCount: document['Matriz2'].length,
+                      itemBuilder: (context, index) {
+                        return ListTile(
+                          subtitle: Text(
+                            document['Matriz2'][index].toString(),
+                            style: GoogleFonts.inder(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: HexColor("#20D0CE")),
+                            textAlign: TextAlign.left,
+                          ),
+                        );
+                      },
+                    ),
+                  ),
                 ],
               );
             }).toList(),

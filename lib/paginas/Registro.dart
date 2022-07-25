@@ -213,6 +213,21 @@ class _RegistroState extends State<Registro> {
               controller: passwordController,
             ),
           ),
+          Align(
+            alignment: Alignment.center,
+            child: Container(
+              padding: const EdgeInsets.all(20),
+              child: ElevatedButton(
+                child: Text("Registrarse"),
+                style: ElevatedButton.styleFrom(
+                    primary: Color.fromARGB(255, 0, 183, 196),
+                    onPrimary: Colors.white,
+                    elevation: 5,
+                    shadowColor: Colors.black),
+                onPressed: () {},
+              ),
+            ),
+          ),
         ],
       ),
     );

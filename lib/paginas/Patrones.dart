@@ -1,6 +1,7 @@
 import 'dart:html';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:enfermeria_app/paginas/Necesidades.dart';
 import 'package:enfermeria_app/paginas/PatronesInfo.dart';
 import 'package:enfermeria_app/paginas/Registro.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -30,7 +31,10 @@ class _NecesidadesState extends State<Patrones> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Necesidades()));
+                  },
                   child: Text("Necesidades"),
                   style: ButtonStyle(
                       backgroundColor:
