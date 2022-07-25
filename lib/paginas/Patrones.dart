@@ -50,22 +50,23 @@ class _NecesidadesState extends State<Patrones> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("Marjan C"),
-                    Icon(Icons.person, size: 30,)
-                  ],
-                )
-              ),
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("Marjan C"),
+                      Icon(
+                        Icons.person,
+                        size: 30,
+                      )
+                    ],
+                  )),
             ],
           )
         ],
       ),
       body: StreamBuilder(
-        stream:
-            FirebaseFirestore.instance.collection('Patrones').snapshots(),
+        stream: FirebaseFirestore.instance.collection('Patrones').snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (!snapshot.hasData) {
             return Center(
@@ -79,7 +80,13 @@ class _NecesidadesState extends State<Patrones> {
                   margin: EdgeInsets.all(16),
                   child: InkWell(
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => PatronesInfo(title: document['Title'].toString(),),));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => PatronesInfo(
+                              title: document['Title'].toString(),
+                            ),
+                          ));
                     },
                     child: Card(
                       color: HexColor("#20D0CE"),
