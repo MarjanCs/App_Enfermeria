@@ -18,6 +18,7 @@ class _NecesidadesState extends State<Necesidades> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: HexColor("#EDFFFD"),
       appBar: AppBar(
         backgroundColor: HexColor("#20D0CE"),
         actions: [
@@ -118,6 +119,8 @@ class _NecesidadesState extends State<Necesidades> {
                                 ),
                               ),
                             ),
+                            //Image.network(
+                            //  'https://i.picsum.photos/id/9/250/250.jpg?hmac=tqDH5wEWHDN76mBIWEPzg1in6egMl49qZeguSaH9_VI')
                           ],
                         ),
                       ),

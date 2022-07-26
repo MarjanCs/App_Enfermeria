@@ -21,6 +21,7 @@ class _NecesidadesState extends State<Patrones> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: HexColor("#EDFFFD"),
       appBar: AppBar(
         backgroundColor: HexColor("#20D0CE"),
         actions: [
@@ -79,53 +80,57 @@ class _NecesidadesState extends State<Patrones> {
           }
           return ListView(
             children: snapshot.data!.docs.map((document) {
-              return Container(
-                  width: MediaQuery.of(context).size.width,
-                  margin: EdgeInsets.all(16),
-                  child: InkWell(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => PatronesInfo(
-                              title: document['Title'].toString(),
-                            ),
-                          ));
-                    },
-                    child: Card(
-                      color: HexColor("#20D0CE"),
-                      child: Container(
-                        padding: EdgeInsets.all(16),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Align(
-                                alignment: Alignment.topLeft,
-                                child: SizedBox(
-                                    height: 20,
-                                    width: 20,
-                                    child: Icon(Icons.abc_sharp))),
-                            Flexible(
-                              child: Padding(
-                                padding: const EdgeInsets.fromLTRB(
-                                    15.0, 0.0, 0.0, 0.0),
-                                child: Text(
-                                  document['Title'].toString(),
-                                  overflow: TextOverflow.ellipsis,
-                                  maxLines: 500,
-                                  textAlign: TextAlign.left,
-                                  style: GoogleFonts.dmSans(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 18,
-                                      color: HexColor("#EDFFFD")),
+              return Column(
+                children: [
+                  Container(
+                      width: MediaQuery.of(context).size.width,
+                      margin: EdgeInsets.all(16),
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => PatronesInfo(
+                                  title: document['Title'].toString(),
                                 ),
-                              ),
+                              ));
+                        },
+                        child: Card(
+                          color: HexColor("#20D0CE"),
+                          child: Container(
+                            padding: EdgeInsets.all(16),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Align(
+                                    alignment: Alignment.topLeft,
+                                    child: SizedBox(
+                                        height: 20,
+                                        width: 20,
+                                        child: Icon(Icons.abc_sharp))),
+                                Flexible(
+                                  child: Padding(
+                                    padding: const EdgeInsets.fromLTRB(
+                                        15.0, 0.0, 0.0, 0.0),
+                                    child: Text(
+                                      document['Title'].toString(),
+                                      overflow: TextOverflow.ellipsis,
+                                      maxLines: 500,
+                                      textAlign: TextAlign.left,
+                                      style: GoogleFonts.dmSans(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 18,
+                                          color: HexColor("#EDFFFD")),
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
-                          ],
+                          ),
                         ),
-                      ),
-                    ),
-                  ));
+                      )),
+                ],
+              );
             }).toList(),
           );
         },

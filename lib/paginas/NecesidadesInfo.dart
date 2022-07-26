@@ -18,6 +18,7 @@ class _NecesidadesInfoState extends State<NecesidadesInfo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: HexColor("#EDFFFD"),
       appBar: AppBar(
         backgroundColor: HexColor("#20D0CE"),
         actions: [
@@ -89,62 +90,96 @@ class _NecesidadesInfoState extends State<NecesidadesInfo> {
                       color: HexColor("#9E2B2A"),
                     ),
                   ),
-                  Text(
-                    document['Titulo2'].toString(),
-                    style: GoogleFonts.inder(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: HexColor("#9E2B2A")),
-                  ),
-                  Text(
-                    document['Descripcion'].toString(),
-                    style: GoogleFonts.inder(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: HexColor("#20D0CE")),
-                  ),
-                  Text(document['Titulo3'].toString(),
-                      style: GoogleFonts.inder(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: HexColor("#9E2B2A"))),
-                  Text(
-                    document['Descripcion2'].toString(),
-                    style: GoogleFonts.inder(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: HexColor("#20D0CE")),
-                  ),
-                  Text(document['Titulo4'].toString(),
-                      style: GoogleFonts.inder(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: HexColor("#9E2B2A"))),
-                  Container(
-                    padding: EdgeInsets.all(2.0),
-                    child: ListView.builder(
-                      scrollDirection: Axis.vertical,
-                      shrinkWrap: true,
-                      itemCount: document['Matriz'].length,
-                      itemBuilder: (context, index) {
-                        return ListTile(
-                          subtitle: Text(
-                            document['Matriz'][index].toString(),
-                            style: GoogleFonts.inder(
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                                color: HexColor("#20D0CE")),
-                            textAlign: TextAlign.left,
-                          ),
-                        );
-                      },
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(document['Titulo2'].toString(),
+                          textAlign: TextAlign.left,
+                          style: GoogleFonts.inder(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: HexColor("#9E2B2A"))),
                     ),
                   ),
-                  Text(document['Titulo5'].toString(),
-                      style: GoogleFonts.inder(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: HexColor("#9E2B2A"))),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(document['Descripcion'].toString(),
+                          textAlign: TextAlign.left,
+                          style: GoogleFonts.inder(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: HexColor("#20D0CE"))),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(document['Titulo3'].toString(),
+                          textAlign: TextAlign.left,
+                          style: GoogleFonts.inder(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: HexColor("#9E2B2A"))),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(document['Descripcion2'].toString(),
+                          textAlign: TextAlign.left,
+                          style: GoogleFonts.inder(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: HexColor("#20D0CE"))),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(document['Titulo4'].toString(),
+                          textAlign: TextAlign.left,
+                          style: GoogleFonts.inder(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: HexColor("#9E2B2A"))),
+                    ),
+                  ),
+                  ListView.builder(
+                    scrollDirection: Axis.vertical,
+                    shrinkWrap: true,
+                    itemCount: document['Matriz'].length,
+                    itemBuilder: (context, index) {
+                      return ListTile(
+                        style: ListTileStyle.list,
+                        subtitle: Text(
+                          document['Matriz'][index].toString(),
+                          style: GoogleFonts.inder(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                              color: HexColor("#20D0CE")),
+                          textAlign: TextAlign.left,
+                        ),
+                      );
+                    },
+                  ),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(document['Titulo5'].toString(),
+                          textAlign: TextAlign.left,
+                          style: GoogleFonts.inder(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: HexColor("#9E2B2A"))),
+                    ),
+                  ),
                   Container(
                     padding: EdgeInsets.all(2.0),
                     child: ListView.builder(
@@ -162,6 +197,27 @@ class _NecesidadesInfoState extends State<NecesidadesInfo> {
                             textAlign: TextAlign.left,
                           ),
                         );
+                      },
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: RaisedButton(
+                      elevation: 0,
+                      color: HexColor("#EDFFFD"),
+                      child: Text(
+                        "Patrones Funcionales Relacionados",
+                        style: GoogleFonts.inter(
+                            decoration: TextDecoration.underline,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                            color: HexColor("#9E2B2A")),
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Patrones()));
                       },
                     ),
                   ),

@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:enfermeria_app/paginas/Necesidades.dart';
 import 'package:flutter/material.dart';
 import 'package:enfermeria_app/paginas/Patrones.dart';
 import 'package:flutter/src/foundation/key.dart';
@@ -18,6 +19,7 @@ class _PatronesInfoState extends State<PatronesInfo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: HexColor("#EDFFFD"),
       appBar: AppBar(
         backgroundColor: HexColor("#20D0CE"),
         actions: [
@@ -81,20 +83,29 @@ class _PatronesInfoState extends State<PatronesInfo> {
             children: snapshot.data!.docs.map((document) {
               return Column(
                 children: [
-                  Text(
-                    document['Titulo'].toString(),
-                    style: GoogleFonts.inder(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: HexColor("#9E2B2A"),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(document['Titulo'].toString(),
+                          textAlign: TextAlign.left,
+                          style: GoogleFonts.inder(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: HexColor("#9E2B2A"))),
                     ),
                   ),
-                  Text(
-                    document['Titulo2'].toString(),
-                    style: GoogleFonts.inder(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: HexColor("#9E2B2A")),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(document['Titulo2'].toString(),
+                          textAlign: TextAlign.left,
+                          style: GoogleFonts.inder(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: HexColor("#9E2B2A"))),
+                    ),
                   ),
                   Container(
                     padding: EdgeInsets.all(2.0),
@@ -116,26 +127,54 @@ class _PatronesInfoState extends State<PatronesInfo> {
                       },
                     ),
                   ),
-                  Text(document['Subtitulo'].toString(),
-                      style: GoogleFonts.inder(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: HexColor("#9E2B2A"))),
-                  Text(document['Titulo3'].toString(),
-                      style: GoogleFonts.inder(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: HexColor("#9E2B2A"))),
-                  Text(document['Descripcion'].toString(),
-                      style: GoogleFonts.inder(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          color: HexColor("#20D0CE"))),
-                  Text(document['Titulo4'].toString(),
-                      style: GoogleFonts.inder(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: HexColor("#9E2B2A"))),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(document['Subtitulo'].toString(),
+                          textAlign: TextAlign.left,
+                          style: GoogleFonts.inder(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: HexColor("#9E2B2A"))),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(document['Titulo3'].toString(),
+                          textAlign: TextAlign.left,
+                          style: GoogleFonts.inder(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: HexColor("#9E2B2A"))),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(document['Descripcion'].toString(),
+                          textAlign: TextAlign.left,
+                          style: GoogleFonts.inder(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: HexColor("#20D0CE"))),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(document['Titulo4'].toString(),
+                          textAlign: TextAlign.left,
+                          style: GoogleFonts.inder(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: HexColor("#9E2B2A"))),
+                    ),
+                  ),
                   Container(
                     padding: EdgeInsets.all(2.0),
                     child: ListView.builder(
@@ -153,6 +192,27 @@ class _PatronesInfoState extends State<PatronesInfo> {
                             textAlign: TextAlign.left,
                           ),
                         );
+                      },
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: RaisedButton(
+                      elevation: 0,
+                      color: HexColor("#EDFFFD"),
+                      child: Text(
+                        "Necesidades Basicas Relacionadas",
+                        style: GoogleFonts.inter(
+                            decoration: TextDecoration.underline,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                            color: HexColor("#9E2B2A")),
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Necesidades()));
                       },
                     ),
                   ),
