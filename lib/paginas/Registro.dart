@@ -33,8 +33,6 @@ class _RegistroState extends State<Registro> {
                     'assets/logo.png',
                   ),
                 ),
-                //child: Text("Nursing Help",
-                //style: GoogleFonts.inter(fontSize: 30)),
               ),
               Container(
                 padding: EdgeInsets.fromLTRB(1, 20, 1, 10),

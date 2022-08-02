@@ -18,118 +18,150 @@ class _NecesidadesState extends State<Necesidades> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: HexColor("#EDFFFD"),
-      appBar: AppBar(
-        backgroundColor: HexColor("#20D0CE"),
-        actions: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: Text("Necesidades"),
-                  style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all(HexColor("#125873")),
-                      elevation: MaterialStateProperty.all(0.0)),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: ElevatedButton(
+        backgroundColor: HexColor("#EDFFFD"),
+        appBar: AppBar(
+          backgroundColor: HexColor("#20D0CE"),
+          actions: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: Text("Necesidades"),
                     style: ButtonStyle(
                         backgroundColor:
                             MaterialStateProperty.all(HexColor("#125873")),
                         elevation: MaterialStateProperty.all(0.0)),
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Patrones()));
-                    },
-                    child: Text("Patrones")),
-              ),
-              Padding(
+                  ),
+                ),
+                Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text("Marjan C"),
-                      Icon(
-                        Icons.person,
-                        size: 30,
-                      )
-                    ],
-                  )),
-            ],
-          )
-        ],
-      ),
-      body: StreamBuilder(
-        stream:
-            FirebaseFirestore.instance.collection('Necesidades_14').snapshots(),
-        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-          if (!snapshot.hasData) {
-            return Center(
-              child: CircularProgressIndicator(),
-            );
-          }
-          return ListView(
-            children: snapshot.data!.docs.map((document) {
-              return Container(
-                  width: MediaQuery.of(context).size.width,
-                  margin: EdgeInsets.all(16),
-                  child: InkWell(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => NecesidadesInfo(
-                              title: document['Title'].toString(),
-                            ),
-                          ));
-                    },
-                    child: Card(
-                      color: HexColor("#20D0CE"),
-                      child: Container(
-                        padding: EdgeInsets.all(16),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Align(
-                                alignment: Alignment.topLeft,
-                                child: SizedBox(
-                                    height: 20,
-                                    width: 20,
-                                    child: Icon(Icons.abc_sharp))),
-                            Flexible(
-                              child: Padding(
-                                padding: const EdgeInsets.fromLTRB(
-                                    15.0, 0.0, 0.0, 0.0),
-                                child: Text(
-                                  document['Title'].toString(),
-                                  overflow: TextOverflow.ellipsis,
-                                  maxLines: 500,
-                                  textAlign: TextAlign.left,
-                                  style: GoogleFonts.dmSans(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 18,
-                                      color: HexColor("#EDFFFD")),
+                  child: ElevatedButton(
+                      style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all(HexColor("#125873")),
+                          elevation: MaterialStateProperty.all(0.0)),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Patrones()));
+                      },
+                      child: Text("Patrones")),
+                ),
+                Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("Marjan C"),
+                        Icon(
+                          Icons.person,
+                          size: 30,
+                        )
+                      ],
+                    )),
+              ],
+            )
+          ],
+        ),
+        body: Container(
+          child: Column(
+            children: [
+              Container(
+                color: HexColor('#ff74dd'),
+                //decoration: BoxDecoration(
+                // color: HexColor('#EDFFFD'),
+                //),
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Image.network(
+                          'https://i.picsum.photos/id/9/250/250.jpg?hmac=tqDH5wEWHDN76mBIWEPzg1in6egMl49qZeguSaH9_VI'),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text("Necesidades Basicas \n Virginia Henderson",
+                          style: GoogleFonts.inter(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                              color: HexColor("#125873"))),
+                    ),
+                  ],
+                ),
+              ),
+              StreamBuilder(
+                stream: FirebaseFirestore.instance
+                    .collection('Necesidades_14')
+                    .snapshots(),
+                builder: (BuildContext context,
+                    AsyncSnapshot<QuerySnapshot> snapshot) {
+                  if (!snapshot.hasData) {
+                    return Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }
+                  return ListView(
+                    children: snapshot.data!.docs.map((document) {
+                      return Container(
+                          width: MediaQuery.of(context).size.width,
+                          margin: EdgeInsets.all(16),
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => NecesidadesInfo(
+                                      title: document['Title'].toString(),
+                                    ),
+                                  ));
+                            },
+                            child: Card(
+                              color: HexColor("#20D0CE"),
+                              child: Container(
+                                padding: EdgeInsets.all(16),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Align(
+                                        alignment: Alignment.topLeft,
+                                        child: SizedBox(
+                                            height: 20,
+                                            width: 20,
+                                            child: Icon(Icons.abc_sharp))),
+                                    Flexible(
+                                      child: Padding(
+                                        padding: const EdgeInsets.fromLTRB(
+                                            15.0, 0.0, 0.0, 0.0),
+                                        child: Text(
+                                          document['Title'].toString(),
+                                          overflow: TextOverflow.ellipsis,
+                                          maxLines: 500,
+                                          textAlign: TextAlign.left,
+                                          style: GoogleFonts.dmSans(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 18,
+                                              color: HexColor("#EDFFFD")),
+                                        ),
+                                      ),
+                                    ),
+                                    //Image.network(
+                                    //  'https://i.picsum.photos/id/9/250/250.jpg?hmac=tqDH5wEWHDN76mBIWEPzg1in6egMl49qZeguSaH9_VI')
+                                  ],
                                 ),
                               ),
                             ),
-                            //Image.network(
-                            //  'https://i.picsum.photos/id/9/250/250.jpg?hmac=tqDH5wEWHDN76mBIWEPzg1in6egMl49qZeguSaH9_VI')
-                          ],
-                        ),
-                      ),
-                    ),
-                  ));
-            }).toList(),
-          );
-        },
-      ),
-    );
+                          ));
+                    }).toList(),
+                  );
+                },
+              ),
+            ],
+          ),
+        ));
   }
 }
