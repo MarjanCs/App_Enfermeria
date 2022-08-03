@@ -105,9 +105,10 @@ class _NecesidadesState extends State<Patrones> {
                                 Align(
                                     alignment: Alignment.topLeft,
                                     child: SizedBox(
-                                        height: 20,
-                                        width: 20,
-                                        child: Icon(Icons.abc_sharp))),
+                                      height: 50,
+                                      width: 50,
+                                      child: Image.network(document['Imagen']),
+                                    )),
                                 Flexible(
                                   child: Padding(
                                     padding: const EdgeInsets.fromLTRB(
@@ -116,7 +117,7 @@ class _NecesidadesState extends State<Patrones> {
                                       document['Title'].toString(),
                                       overflow: TextOverflow.ellipsis,
                                       maxLines: 500,
-                                      textAlign: TextAlign.left,
+                                      textAlign: TextAlign.center,
                                       style: GoogleFonts.dmSans(
                                           fontWeight: FontWeight.bold,
                                           fontSize: 18,

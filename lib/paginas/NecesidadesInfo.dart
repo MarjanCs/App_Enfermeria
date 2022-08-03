@@ -82,6 +82,13 @@ class _NecesidadesInfoState extends State<NecesidadesInfo> {
             children: snapshot.data!.docs.map((document) {
               return Column(
                 children: [
+                  Align(
+                      alignment: Alignment.center,
+                      child: SizedBox(
+                        height: 80,
+                        width: 80,
+                        child: Image.network(document['ImagenT']),
+                      )),
                   Text(
                     document['Titulo'].toString(),
                     style: GoogleFonts.inder(
@@ -97,9 +104,7 @@ class _NecesidadesInfoState extends State<NecesidadesInfo> {
                       child: Text(document['Titulo2'].toString(),
                           textAlign: TextAlign.left,
                           style: GoogleFonts.inder(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: HexColor("#9E2B2A"))),
+                              fontSize: 18, color: HexColor("#9E2B2A"))),
                     ),
                   ),
                   Align(
@@ -109,9 +114,7 @@ class _NecesidadesInfoState extends State<NecesidadesInfo> {
                       child: Text(document['Descripcion'].toString(),
                           textAlign: TextAlign.left,
                           style: GoogleFonts.inder(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: HexColor("#20D0CE"))),
+                              fontSize: 18, color: HexColor("#20D0CE"))),
                     ),
                   ),
                   Align(
@@ -121,9 +124,7 @@ class _NecesidadesInfoState extends State<NecesidadesInfo> {
                       child: Text(document['Titulo3'].toString(),
                           textAlign: TextAlign.left,
                           style: GoogleFonts.inder(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: HexColor("#9E2B2A"))),
+                              fontSize: 18, color: HexColor("#9E2B2A"))),
                     ),
                   ),
                   Align(
@@ -133,9 +134,7 @@ class _NecesidadesInfoState extends State<NecesidadesInfo> {
                       child: Text(document['Descripcion2'].toString(),
                           textAlign: TextAlign.left,
                           style: GoogleFonts.inder(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: HexColor("#20D0CE"))),
+                              fontSize: 18, color: HexColor("#20D0CE"))),
                     ),
                   ),
                   Align(
@@ -145,9 +144,7 @@ class _NecesidadesInfoState extends State<NecesidadesInfo> {
                       child: Text(document['Titulo4'].toString(),
                           textAlign: TextAlign.left,
                           style: GoogleFonts.inder(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: HexColor("#9E2B2A"))),
+                              fontSize: 18, color: HexColor("#9E2B2A"))),
                     ),
                   ),
                   ListView.builder(
@@ -160,9 +157,7 @@ class _NecesidadesInfoState extends State<NecesidadesInfo> {
                         subtitle: Text(
                           document['Matriz'][index].toString(),
                           style: GoogleFonts.inder(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              color: HexColor("#20D0CE")),
+                              fontSize: 18, color: HexColor("#20D0CE")),
                           textAlign: TextAlign.left,
                         ),
                       );
@@ -175,9 +170,7 @@ class _NecesidadesInfoState extends State<NecesidadesInfo> {
                       child: Text(document['Titulo5'].toString(),
                           textAlign: TextAlign.left,
                           style: GoogleFonts.inder(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: HexColor("#9E2B2A"))),
+                              fontSize: 18, color: HexColor("#9E2B2A"))),
                     ),
                   ),
                   Container(
@@ -191,9 +184,7 @@ class _NecesidadesInfoState extends State<NecesidadesInfo> {
                           subtitle: Text(
                             document['Matriz2'][index].toString(),
                             style: GoogleFonts.inder(
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                                color: HexColor("#20D0CE")),
+                                fontSize: 18, color: HexColor("#20D0CE")),
                             textAlign: TextAlign.left,
                           ),
                         );
@@ -201,7 +192,7 @@ class _NecesidadesInfoState extends State<NecesidadesInfo> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(25),
                     child: RaisedButton(
                       elevation: 0,
                       color: HexColor("#EDFFFD"),
@@ -209,7 +200,7 @@ class _NecesidadesInfoState extends State<NecesidadesInfo> {
                         "Patrones Funcionales Relacionados",
                         style: GoogleFonts.inter(
                             decoration: TextDecoration.underline,
-                            fontSize: 15,
+                            fontSize: 18,
                             fontWeight: FontWeight.bold,
                             color: HexColor("#9E2B2A")),
                       ),

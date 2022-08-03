@@ -30,13 +30,17 @@ class _PatronesInfoState extends State<PatronesInfo> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: ElevatedButton(
-                  onPressed: () {},
-                  child: Text("Necesidades"),
-                  style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all(HexColor("#125873")),
-                      elevation: MaterialStateProperty.all(0.0)),
-                ),
+                    style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all(HexColor("#125873")),
+                        elevation: MaterialStateProperty.all(0.0)),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Necesidades()));
+                    },
+                    child: Text("Necesidades")),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -84,13 +88,20 @@ class _PatronesInfoState extends State<PatronesInfo> {
               return Column(
                 children: [
                   Align(
+                      alignment: Alignment.center,
+                      child: SizedBox(
+                        height: 80,
+                        width: 80,
+                        child: Image.network(document['ImagenT']),
+                      )),
+                  Align(
                     alignment: Alignment.centerLeft,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(document['Titulo'].toString(),
                           textAlign: TextAlign.left,
                           style: GoogleFonts.inder(
-                              fontSize: 18,
+                              fontSize: 20,
                               fontWeight: FontWeight.bold,
                               color: HexColor("#9E2B2A"))),
                     ),
@@ -102,9 +113,7 @@ class _PatronesInfoState extends State<PatronesInfo> {
                       child: Text(document['Titulo2'].toString(),
                           textAlign: TextAlign.left,
                           style: GoogleFonts.inder(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: HexColor("#9E2B2A"))),
+                              fontSize: 18, color: HexColor("#9E2B2A"))),
                     ),
                   ),
                   Container(
@@ -118,9 +127,7 @@ class _PatronesInfoState extends State<PatronesInfo> {
                           subtitle: Text(
                             document['Matriz'][index].toString(),
                             style: GoogleFonts.inder(
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                                color: HexColor("#20D0CE")),
+                                fontSize: 18, color: HexColor("#20D0CE")),
                             textAlign: TextAlign.left,
                           ),
                         );
@@ -134,9 +141,7 @@ class _PatronesInfoState extends State<PatronesInfo> {
                       child: Text(document['Subtitulo'].toString(),
                           textAlign: TextAlign.left,
                           style: GoogleFonts.inder(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: HexColor("#9E2B2A"))),
+                              fontSize: 18, color: HexColor("#9E2B2A"))),
                     ),
                   ),
                   Align(
@@ -146,9 +151,7 @@ class _PatronesInfoState extends State<PatronesInfo> {
                       child: Text(document['Titulo3'].toString(),
                           textAlign: TextAlign.left,
                           style: GoogleFonts.inder(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: HexColor("#9E2B2A"))),
+                              fontSize: 18, color: HexColor("#9E2B2A"))),
                     ),
                   ),
                   Align(
@@ -158,9 +161,7 @@ class _PatronesInfoState extends State<PatronesInfo> {
                       child: Text(document['Descripcion'].toString(),
                           textAlign: TextAlign.left,
                           style: GoogleFonts.inder(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: HexColor("#20D0CE"))),
+                              fontSize: 18, color: HexColor("#20D0CE"))),
                     ),
                   ),
                   Align(
@@ -170,9 +171,7 @@ class _PatronesInfoState extends State<PatronesInfo> {
                       child: Text(document['Titulo4'].toString(),
                           textAlign: TextAlign.left,
                           style: GoogleFonts.inder(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: HexColor("#9E2B2A"))),
+                              fontSize: 18, color: HexColor("#9E2B2A"))),
                     ),
                   ),
                   Container(
@@ -186,9 +185,7 @@ class _PatronesInfoState extends State<PatronesInfo> {
                           subtitle: Text(
                             document['Matriz2'][index].toString(),
                             style: GoogleFonts.inder(
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                                color: HexColor("#20D0CE")),
+                                fontSize: 18, color: HexColor("#20D0CE")),
                             textAlign: TextAlign.left,
                           ),
                         );
@@ -196,7 +193,7 @@ class _PatronesInfoState extends State<PatronesInfo> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(25),
                     child: RaisedButton(
                       elevation: 0,
                       color: HexColor("#EDFFFD"),
